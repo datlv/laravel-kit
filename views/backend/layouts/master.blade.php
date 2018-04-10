@@ -97,7 +97,7 @@
             </div>
             <div>
                 Version {{config('app.version')}}  —  Laravel Framework {{app()->version()}} — PHP {{phpversion()}}
-                <!--Thiết kế và Phát triển bởi <a href="http://minhbang.com">Minh Bằng</a>.-->
+                <!--Thiết kế và Phát triển bởi <a href="http://datlv.com">Datlv</a>.-->
             </div>
         </div>
     </div>
