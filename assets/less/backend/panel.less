@@ -1,0 +1,178 @@
+@import (reference) "variables";
+@import (reference) "../_mixins";
+@import (reference) "../bootstrap/mixins/vendor-prefixes";
+
+.panel {
+    .panel-heading {
+        position: relative;
+        .loading {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 30px;
+            height: 30px;
+            background: url("../../images/loading.gif") no-repeat center;
+        }
+    }
+}
+
+#sidebar {
+    .panel {
+        margin: 20px 0 0;
+        .border-radius(0);
+    }
+    .panel-heading {
+        .border-radius(0);
+    }
+}
+
+body.mini-navbar {
+    #sidebar {
+        .panel {
+            display: none;
+        }
+    }
+}
+
+.panel-nestable {
+    .panel-heading {
+        text-align: right;
+        .btn {
+            margin-left: 5px;
+        }
+    }
+    .panel-body {
+        padding: 20px 15px;
+    }
+    .popover {
+        max-width: none !important;
+    }
+}
+
+.panel-sidebar {
+    .panel-body {
+        padding: 0;
+        .panel-body-sidebar {
+            background-color: @nav-bg;
+            padding: 10px;
+
+            .group-title {
+                color: @navy;
+                text-align: center;
+                border-bottom: 1px dotted @navy;
+                text-transform: uppercase;
+            }
+
+            &.left {
+                padding-right: 0;
+                .group-title {
+                    margin: 15px 10px 5px 0;
+                }
+            }
+            &.right {
+                padding-left: 0;
+                .group-title {
+                    margin: 15px 0 5px 10px;
+                }
+            }
+            .nav-tabs {
+                padding-top: 0;
+                & > li {
+                    .actions {
+                        display: none;
+                        position: absolute;
+                        top: 9px;
+                        right: 5px;
+                        a {
+                            margin-left: 3px;
+                        }
+                    }
+
+                    > a {
+                        border: none;
+                        font-weight: bold;
+                        &:hover, &:focus {
+                            color: @nav-bg;
+                            background-color: @ibox-content-bg;
+                        }
+                    }
+                    &:focus, &:hover {
+                        > a:not(.btn) {
+                            color: @nav-bg;
+                            background-color: @ibox-content-bg;
+                        }
+                        .actions {
+                            display: block;
+                        }
+                    }
+
+                    &.active > a,
+                    &.active > a:focus,
+                    &.active > a:hover {
+                        color: @nav-bg;
+                        background-color: @ibox-content-bg;
+                    }
+                    &.button {
+                        margin-left: 0;
+                        margin-top: 5px;
+                        & > a.btn {
+                            display: inline-block;
+                            color: #ffffff;
+                            padding: 5px 10px;
+                            i, span {
+                                margin: 0;
+                            }
+                            &:hover, &:focus {
+                                background-color: @red;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .tabs-left {
+                border-right: none;
+            }
+            .tabs-right {
+                border-left: none;
+            }
+        }
+        .panel-body-content {
+            padding: 20px 0;
+        }
+    }
+}
+
+.panel-tabs {
+    border-top: 0;
+    .border-top-radius(0);
+    .panel-heading {
+        .border-top-radius(0);
+    }
+}
+
+.panel-no-padding {
+    .panel-body {
+        padding: 0;
+    }
+}
+
+.panel-color-variant(@name; @color; @text_color) {
+    .panel@{name} {
+        border-color: @color;
+        .panel-heading {
+            border-color: @color;
+            color: @text_color;
+            background-color: @color;
+            .badge {
+                background-color: @text_color;
+                color: @color;
+            }
+        }
+    }
+}
+
+.panel-color-variant(-green; #5cb85c; @ibox-content-bg);
+.panel-color-variant(-red; #d9534f; @ibox-content-bg);
+.panel-color-variant(-yellow; #f0ad4e; @ibox-content-bg);

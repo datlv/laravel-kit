@@ -1,0 +1,65 @@
+@import (reference)"variables";
+@import (reference)"../_mixins";
+
+#layout-editor {
+    .widgets {
+        .item {
+            z-index: 10;
+            margin-bottom: 15px;
+            .title {
+                width: 100%;
+                font-size: 1.1em;
+                background: #fafafa;
+                border: 1px solid @border-color;
+                cursor: pointer;
+                padding: 6px 12px;
+                margin-bottom: 5px;
+                .box-shadow(0 1px 1px rgba(0, 0, 0, .04));
+                .disable-selection();
+                &:hover, :focus {
+                    border-color: darken(@border-color, 10%);
+                }
+                .actions {
+                    float: right;
+                    a {
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+        .item-helper {
+            width: 100% !important;
+        }
+    }
+    .panel-widgets {
+        .widgets-description {
+            margin-bottom: 20px;
+            color: darken(@dark-gray, 10%);
+        }
+        .widgets {
+            .item {
+                .title {
+
+                }
+                .description {
+                    color: darken(@dark-gray, 10%);
+                }
+            }
+        }
+    }
+    .ibox-sidebar {
+        .description {
+            color: darken(@dark-gray, 10%);
+            margin-bottom: 20px;
+        }
+        .widgets {
+            min-height: 35px;
+            .item {
+                width: 100%;
+            }
+        }
+    }
+    #inactive-widgets {
+        min-height: 35px;
+    }
+}

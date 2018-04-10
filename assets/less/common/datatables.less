@@ -1,0 +1,187 @@
+@import (reference)"../bootstrap/variables";
+@import (reference)"../bootstrap/mixins/clearfix";
+@import (reference)"../_mixins";
+
+.min-width() {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.table {
+    img {
+        border: 1px solid @table-border-color;
+    }
+    .btn {
+        + .btn {
+            margin-left: 3px;
+        }
+    }
+    br {
+        & > .btn {
+            margin-left: 0;
+        }
+        ~ .btn {
+            margin-top: 3px;
+        }
+    }
+    &.table-detail {
+        tr > td:first-child {
+            .min-width();
+            text-align: right;
+            color: @brand-primary;
+        }
+        .label {
+            margin-right: 3px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &.table-sortable {
+        user-select: none;
+        tr.ui-sortable-helper {
+            background: @state-warning-bg;
+            td {
+                border-color: @state-warning-border;
+                border-top: none;
+            }
+        }
+        tr.ui-sortable-placeholder {
+            background: @state-success-bg;
+            border: 1px solid @state-success-border;
+            * {
+                border: 1px solid @state-success-border;
+            }
+        }
+    }
+    &.table-list {
+        td {
+            vertical-align: inherit;
+        }
+    }
+    th.min-width {
+        .min-width();
+    }
+    td.min-width {
+        .min-width();
+    }
+    td.column-image {
+        img {
+            max-width: inherit;
+        }
+    }
+    .column-number {
+        text-align: right;
+    }
+    .btn-group {
+        white-space: nowrap;
+        .btn {
+            float: none;
+            display: inline-block;
+            margin: 0;
+            & + .btn {
+                margin: 0 0 0 -5px;
+            }
+        }
+    }
+    code + code {
+        margin-left: 3px;
+    }
+}
+
+.dataTables_wrapper {
+    padding: 0;
+    .dataTables_tools {
+        background: #efefef;
+        border: 1px solid @table-border-color;
+        .clearfix();
+        position: relative;
+    }
+    .dataTables_length {
+        padding: 5px 5px 0 0;
+        float: right;
+        select {
+            .border-radius("0 !important");
+        }
+        label {
+            font-weight: normal;
+        }
+    }
+    .dataTables_filter {
+        padding: 5px 15px 0 30px;
+        float: right;
+        input {
+            margin-left: 5px;
+        }
+        label {
+            font-weight: normal;
+        }
+    }
+
+    .table {
+        width: 100% !important;
+        margin: 0 !important;
+        .min-width {
+            width: 1% !important;
+            white-space: nowrap !important;
+            &:after {
+                float: none;
+                margin-left: 5px;
+            }
+        }
+        thead > tr > th {
+            background: transparent;
+        }
+    }
+    .dataTables_info {
+        font-size: 12px;
+        padding: 8px 0 0 10px !important;
+    }
+    .dataTables_paginate {
+        padding: 5px 5px 2px;
+        float: none;
+        text-align: right;
+        .pagination > li > a, .pagination > li > span {
+            padding: 2px 8px;
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+    .dataTables_processing {
+        top: 0 !important;
+        left: 0 !important;
+        height: 30px;
+        width: 30px !important;
+        background: url('../../images/loading.gif') no-repeat center;
+        border: 0;
+        float: left;
+        margin-top: 3px !important;
+        margin-left: 0 !important;
+        &.panel {
+            margin-bottom: 0 !important;
+            box-shadow: none !important;
+        }
+    }
+    .popover {
+        max-width: none !important;
+    }
+}
+
+.dataTables_advanced_filter {
+    form {
+        padding-top: 15px;
+    }
+    .form-group {
+        margin: 0;
+        padding-bottom: 15px;
+    }
+}
+
+.ibox-table {
+    .ibox-content {
+        padding: 0;
+        .panel {
+            margin: 0;
+        }
+    }
+}

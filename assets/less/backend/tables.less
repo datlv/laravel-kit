@@ -1,0 +1,111 @@
+@import (reference)"variables";
+
+.min-width() {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.table {
+    ol {
+        margin: 0;
+        padding: 0 0 0 15px;
+    }
+    &.table-files {
+        .btn {
+            padding: 0;
+            margin: 0;
+        }
+    }
+    &.table-image {
+        .block-thumb {
+            .d-left {
+                float: left;
+                display: block;
+            }
+            .d-right {
+                display: block;
+                margin: 0 0 0 85px;
+            }
+            .a-image {
+                img {
+                    width: 80px;
+                }
+            }
+            .a-title {
+                display: inline-block;
+                margin: 0 0 2px 0;
+            }
+            .a-tags {
+                display: inline-block;
+                border-top: 1px dotted @border-color;
+                padding-top: 2px;
+                .label {
+                    display: inline-block;
+                    margin: 3px 3px 0 0;
+                    padding: 2px 3px;
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+    &.table-detail {
+        tr > td:first-child:not([colspan]) {
+            .min-width();
+            text-align: right;
+            color: @blue;
+            .label + .label {
+                margin-left: 3px;
+            }
+        }
+        .label {
+            margin-right: 3px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &.table-list {
+        td {
+            vertical-align: inherit;
+        }
+    }
+    .min-width {
+        .min-width();
+        .label + .label {
+            margin-left: 3px;
+        }
+    }
+    .middle {
+        vertical-align: middle;
+    }
+    .btn-group {
+        white-space: nowrap;
+        margin-bottom: 5px;
+        .btn {
+            float: none;
+            display: inline-block;
+            margin: 0;
+            & + .btn {
+                margin: 0 0 0 -5px;
+            }
+        }
+    }
+    td .locale-name {
+        display: inline-block;
+        width: 30px;
+        margin-right: 3px;
+        text-align: right;
+        font-style: italic;
+    }
+}
+
+.table-force-bordered {
+    border: 1px solid #EBEBEB !important;
+}
+
+.table-sortable {
+    user-select: none;
+    tr {
+        cursor: move;
+    }
+}

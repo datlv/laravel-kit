@@ -1,0 +1,50 @@
+@import (reference)"variables";
+@import (reference)"../_mixins";
+
+.modal-title {
+    .fa, .glyphicon {
+        color: @navy;
+        font-size: 1.3em;
+    }
+}
+
+.modal-body {
+    padding: 0;
+    iframe {
+        border: 0;
+        width: 100%;
+    }
+}
+
+.modal-fullscreen {
+    .modal-dialog {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: auto;
+        margin: 30px;
+    }
+    .modal-content {
+        height: 100%;
+        position: relative;
+    }
+    .modal-body {
+        position: absolute;
+        width: 100%;
+        bottom: 65px;
+        top: 51px;
+        iframe {
+            height: 100% !important;
+        }
+    }
+    .bootbox-body {
+        height: 100%;
+    }
+    .modal-footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+}

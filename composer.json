@@ -1,0 +1,76 @@
+{
+    "name": "datlv/laravel-kit",
+    "description": "Laravel Kit Package",
+    "keywords": [
+        "datlv",
+        "laravel-kit"
+    ],
+    "homepage": "https://github.com/datlv/laravel-kit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Datlv",
+            "email": "datle2011@gmail.com",
+            "homepage": "http://datlv.com",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/datlv/laravel-authority.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/datlv/laravel-user.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/datlv/laravel-setting.git"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "~5.5.0",
+        "laravelcollective/html": "5.5.*",
+        "laracasts/presenter": "0.2.*",
+        "luketowers/purifier": "~3.0",
+        "delight-im/str": "2.*",
+        "vinkla/hashids": "^3.1",
+        "yajra/laravel-datatables-html": "3.*",
+        "yajra/laravel-datatables-oracle": "8.*",
+        "yajra/laravel-datatables-fractal": "^1.0",
+        "caouecs/laravel-lang": "~3.0",
+        "baum/baum": "~1.1",
+        "itsgoingd/clockwork": "~2.0",
+        "barryvdh/laravel-ide-helper": "^2.2"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.5",
+        "orchestra/database": "~3.5",
+        "nunomaduro/collision": "^1.1",
+        "datlv/laravel-authority": "dev-master",
+        "datlv/laravel-user": "dev-master",
+        "datlv/laravel-setting": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Datlv\\Kit\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Datlv\\Kit\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Datlv\\Kit\\ServiceProvider"
+            ]
+        }
+    }
+}

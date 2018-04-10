@@ -1,0 +1,456 @@
+@import (reference) "variables";
+@import (reference) "../_mixins";
+@import (reference) "../bootstrap/mixins/image";
+
+#app {
+    height: 100%;
+}
+
+.no-image {
+    background: url("../../images/no-image.png") no-repeat center transparent;
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
+}
+
+.label {
+    font-weight: 400;
+}
+
+img {
+    .img-responsive(inline-block);
+}
+
+.messages-page {
+    .error {
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    .buttons {
+        .btn {
+            margin-left: 5px;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.logo {
+    background: url('../../images/laravel-logo.png') no-repeat center center transparent;
+    background-size: 75%;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    .app-name {
+        display: none;
+        /*word-wrap: break-word;
+        text-transform: uppercase;
+        font-size: 1.3em;
+        text-align: center;
+        color: @navy;
+        position: absolute;
+        bottom: 4px;
+        width: 100%;*/
+    }
+}
+
+.logo-small {
+    background: url('../../images/laravel-logo-sm.png') no-repeat center;
+    width: 70px;
+    height: 61px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.middle-box {
+    .logo {
+        background-size: 90%;
+        background-color: @navy;
+        width: 200px;
+        height: 70px;
+        margin-top: 100px;
+        border-radius: 5px;
+    }
+}
+
+.nav-header {
+    padding: 0;
+}
+
+.logo-element {
+    padding: 0;
+}
+
+// Thu nhỏ sidebar
+body.mini-navbar {
+    .nav-header {
+        .app-name, .logo {
+            display: none;
+        }
+    }
+}
+
+.nav > li > a {
+    font-weight: normal;
+}
+
+.navbar-header {
+    .module-name {
+        color: @navy;
+        float: left;
+        display: inline-table;
+        line-height: 60px;
+        font-size: 20px;
+        padding: 0 5px;
+    }
+}
+
+.buttons {
+    .btn {
+        margin-right: 5px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.message-delete {
+    margin: 20px 0;
+    text-align: center;
+    .confirm {
+        color: @red;
+    }
+    .title {
+        color: @lazur;
+        font-size: 1.1em;
+    }
+}
+
+.page-header {
+    border: 0;
+}
+
+.help-block {
+    margin-bottom: 0;
+}
+
+.alert-dismissable .close {
+    top: -4px;
+}
+
+// Translation Manager
+a.status-1 {
+    color: @yellow;
+}
+
+// iBox Tab
+.nav-tabs-ibox {
+    border-color: @border-color;
+    & li {
+        background: none;
+        border: none;
+    }
+
+    & > li > a {
+        margin-bottom: -1px;
+        border-color: @border-color;
+    }
+
+    & > li > a:hover,
+    & > li > a:focus {
+        background-color: #e6e6e6;
+        color: @text-color;
+    }
+
+    & > li.active > a,
+    & > li.active > a:hover,
+    & > li.active > a:focus {
+        background: #ffffff;
+        border-color: @border-color;
+    }
+}
+
+.ibox-tabs {
+    .ibox-content {
+        border-width: 0 1px 1px;
+        .panel-table {
+            border-width: 1px 0;
+            border-color: @border-color;
+            .panel-heading {
+                border-color: @border-color;
+            }
+            .panel-footer {
+                border-color: @border-color;
+            }
+        }
+    }
+    .ibox-title {
+        border-width: 0 1px;
+    }
+}
+
+// Panel
+.panel-footer {
+    .border-radius(0);
+}
+
+.help-block {
+    font-style: italic;
+}
+
+.switch-label {
+    display: block;
+}
+
+.tooltip-inner {
+    white-space: pre;
+    max-width: none;
+}
+
+.navbar-right {
+    float: right !important;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Custom Width size
+ |--------------------------------------------------------------------------
+ */
+.w-xs {
+    width: 60px !important;
+}
+
+.w-sm {
+    width: 120px !important;
+}
+
+.w-md {
+    width: 240px !important;
+}
+
+.w-lg {
+    width: 400px !important;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Select to Button Group
+ |--------------------------------------------------------------------------
+ */
+div.select-btngroup {
+    display: inline-block;
+}
+
+.text-gray {
+    color: #aaaaaa;
+}
+
+.text-null {
+    color: @red;
+    font-style: italic;
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | iBox
+ |--------------------------------------------------------------------------
+ */
+.ibox-title {
+    &.no-height {
+        height: auto !important;
+    }
+    .buttons {
+        float: right;
+        margin-top: -3px;
+        .group {
+            border-right: 1px solid @border-color;
+            &:last-child {
+                border-right: 0;
+            }
+            div {
+                margin-bottom: 3px;
+            }
+        }
+        .btn {
+            margin-right: 5px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .progress {
+        height: 5px;
+        margin: 5px 0 0;
+    }
+}
+
+// popover
+// --------------------------------------------------------------------------
+.popover {
+    z-index: 9990;
+}
+
+.popover.tour-tour {
+    .popover-content {
+        min-width: 270px;
+    }
+}
+
+.popover-title {
+    margin: 0 !important;
+}
+
+.tour-step-backdrop {
+    border: 1px dotted #fff;
+    .control-label {
+        color: #fff;
+    }
+}
+
+/*
+ |--------------------------------------------------------------------------
+ | Columns of same height styles
+ | @see http://www.minimit.com/articles/solutions-tutorials/bootstrap-3-responsive-columns-of-same-height
+ |--------------------------------------------------------------------------
+ */
+.row-height {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row-height-inside {
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.col-height {
+    display: table-cell;
+    float: none;
+    height: 100%;
+}
+
+.col-top {
+    vertical-align: top;
+}
+
+.col-middle {
+    vertical-align: middle;
+}
+
+.col-bottom {
+    vertical-align: bottom;
+}
+
+@media (min-width: 480px) {
+    .row-xs-height {
+        display: table;
+        table-layout: fixed;
+        height: 100%;
+        width: 100%;
+    }
+
+    .col-xs-height {
+        display: table-cell;
+        float: none;
+        height: 100%;
+    }
+
+    .col-xs-top {
+        vertical-align: top;
+    }
+
+    .col-xs-middle {
+        vertical-align: middle;
+    }
+
+    .col-xs-bottom {
+        vertical-align: bottom;
+    }
+}
+
+@media (min-width: 768px) {
+    .row-sm-height {
+        display: table;
+        table-layout: fixed;
+        height: 100%;
+        width: 100%;
+    }
+
+    .col-sm-height {
+        display: table-cell;
+        float: none;
+        height: 100%;
+    }
+
+    .col-sm-top {
+        vertical-align: top;
+    }
+
+    .col-sm-middle {
+        vertical-align: middle;
+    }
+
+    .col-sm-bottom {
+        vertical-align: bottom;
+    }
+}
+
+@media (min-width: 992px) {
+    .row-md-height {
+        display: table;
+        table-layout: fixed;
+        height: 100%;
+        width: 100%;
+    }
+
+    .col-md-height {
+        display: table-cell;
+        float: none;
+        height: 100%;
+    }
+
+    .col-md-top {
+        vertical-align: top;
+    }
+
+    .col-md-middle {
+        vertical-align: middle;
+    }
+
+    .col-md-bottom {
+        vertical-align: bottom;
+    }
+}
+
+@media (min-width: 1200px) {
+    .row-lg-height {
+        display: table;
+        table-layout: fixed;
+        height: 100%;
+        width: 100%;
+    }
+
+    .col-lg-height {
+        display: table-cell;
+        float: none;
+        height: 100%;
+    }
+
+    .col-lg-top {
+        vertical-align: top;
+    }
+
+    .col-lg-middle {
+        vertical-align: middle;
+    }
+
+    .col-lg-bottom {
+        vertical-align: bottom;
+    }
+}

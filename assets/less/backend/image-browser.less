@@ -1,0 +1,83 @@
+@import (reference) "../bootstrap/mixins/vendor-prefixes";
+@import (reference) "variables";
+@import (reference) "../_mixins";
+
+.image-browser {
+    .image-list {
+        .image {
+            border: 1px solid @border-color;
+            padding: 5px;
+            margin: 0 0 15px;
+            background-color: #ffffff;
+            position: relative;
+            cursor: pointer;
+            img {
+                width: 100%;
+                .transition('opacity 0.2s ease 0s, filter 0.2s ease 0s');
+                .opacity(1);
+            }
+            .selected-mark {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30px;
+                height: 30px;
+                text-align: right;
+                padding: 1px 2px 0 0;
+                z-index: 4;
+                .bg {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 30px 30px 0;
+                    border-color: transparent @navy transparent transparent;
+                    -webkit-transform: rotate(360deg);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                .glyphicon, .fa {
+                    position: relative;
+                    color: #ffffff;
+                    z-index: 3;
+                }
+            }
+            .title {
+                display: none;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 3;
+                width: 100%;
+                .opacity(.85);
+                color: #f5f5f5;
+                background-color: #37474f;
+                padding: 5px;
+                font-size: .8em;
+                line-height: 12px;
+            }
+            &:hover, &:focus {
+                img {
+                    .opacity(.8);
+                }
+                .title {
+                    display: inline-block;
+                }
+            }
+            &.selected {
+                border-color: @navy;
+                .selected-mark {
+                    display: block;
+                }
+            }
+        }
+    }
+    .image-pagination {
+        text-align: center;
+        margin-top: 10px;
+        .pagination {
+            margin: 0 0 10px;
+        }
+    }
+}

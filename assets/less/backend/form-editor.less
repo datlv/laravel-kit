@@ -1,0 +1,50 @@
+@import (reference) "variables";
+@import (reference)"../bootstrap/mixins/vendor-prefixes";
+@import (reference)"../bootstrap/mixins/clearfix";
+
+.form-editor {
+    .form-editor-preview {
+        padding: 20px 20px 5px;
+        height: auto;
+        background-color: #eeeeee;
+        .clearfix();
+        .field-group {
+            .clearfix();
+            .user-select(none);
+            border-bottom: 1px dotted darken(#e5e6e7, 5%);
+            background-color: #eeeeee;
+            margin: 0 -15px;
+            padding: 5px 0;
+            &:first-child {
+                border-top: 1px dotted darken(#e5e6e7, 5%);
+            }
+            .checkbox label, .radio label {
+                cursor: default;
+            }
+            &.placeholder {
+                border-top: 1px dotted @navy;
+                border-bottom: 1px dotted @navy;
+                background-color: lighten(@navy, 50%);
+            }
+        }
+
+        .input-group-addon {
+            background: none;
+            border: 0;
+            .fa {
+                cursor: pointer;
+                margin: 0 3px;
+                &.reorder {
+                    cursor: move;
+                }
+            }
+        }
+    }
+    .actions {
+        padding-top: 5px;
+        text-align: right;
+        .btn {
+            margin-left: 3px;
+        }
+    }
+}
